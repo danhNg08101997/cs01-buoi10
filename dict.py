@@ -93,6 +93,18 @@ new_lst_number = [num * 2 for num in lst_number]
 print(new_lst_number)
 new_lst_even_number = [ele for ele in lst_number if ele % 2 == 0]
 print(new_lst_even_number)
+lst_sizes = [41,42,43]
+lst_quantity_size = [{ele:30} for ele in lst_sizes]
+print(lst_quantity_size)
+# tạo 1 list có 100 phần tử
+# lst_number_100 = []
+# for val in range(0,101):
+#     lst_number_100.append(val)
+# print(lst_number_100)
+lst_number_100 = [num for num in range(0,101)]
+print(lst_number_100)
+lst_number_51_100 = [num for num in lst_number_100 if num > 50]
+print(lst_number_51_100)
 
 # Tuple: là collection type chứa nhiều giá trị trên 1 biến tương tự list(có index) tuy nhiên tuple không thể thay đổi giá trị
 screen = (1080, 720)
@@ -104,8 +116,9 @@ dict_bullect = {
 }
 print(dict_bullect)
 print(dict_bullect[(0,0)])
+# ({},{})
 # set: chứa các giá trị không trùng nhau
-lst_number = [1,1,1,2,2,2,3,3,3]
+lst_number = [1,1,1,2,2,2,3,4,4,4,5,5,6,6,6,6]
 set_number = list(set(lst_number))
 print(set_number)
 num = 1
