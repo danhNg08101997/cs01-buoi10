@@ -1,9 +1,10 @@
+import copy
 # Khai báo và các phương thức xoay quanh dict
-
 data = {
     "id": "001",
     "name": "abc",
     "phone":"0911572155"
+    # "name":"xyz" cập nhật giá trị name nếu trùng key
 }
 
 # C:Create thêm 1 giá trị vào dict, 
@@ -48,20 +49,46 @@ shoes_item = {
     "quantity":{
         "41":5,
         "42":5,
-        "43":5
+        "43":3,
+        "44":1,
+        "45":0
     }
 }
 
 # Phương thức .copy(): shallow copy (sao chép nông)
 shoes_clone = shoes_item.copy()
+# shoes_clone = {**shoes_item}
 shoes_clone["name"] = "abc"
 print(id(shoes_clone), shoes_clone)
 print(id(shoes_item), shoes_item)
-
 # Phương thức deepcopy(): copy hoàn toàn dict hoặc list
+shoes_clone = copy.deepcopy(shoes_item)
+shoes_clone["sizes"][0] = 40
+shoes_clone["quantity"]["43"] = 5
+print(shoes_item)
+print(shoes_clone)
+
+# -------------------------Collection extends-----------------------------------------
+lst = [[1,2,3],[4,5,6],[7,8,9]]
+# lấy ra số 8
+print(lst[2][1])
+# duyệt list list
+for lst_item in lst:
+    for value in lst_item:
+        if value == 8:
+            print(value)
+# duyệt list dict
+lst_phone = [
+    {"id":1,"name":"phone1","price": 1000},
+    {"id":2,"name":"phone2","price": 2000},
+    {"id":3,"name":"phone3","price": 3000}
+]
+for phone_item in lst_phone:
+    print(phone_item)
+    print(phone_item["name"])
 
 # list comprehension: tạo list mới từ list cũ
-lst_number = [1,2,3,4,5]
+lst_number = [1,2,3,4,5,6]
 new_lst_number = [num * 2 for num in lst_number]
 print(new_lst_number)
 new_lst_even_number = [ele for ele in lst_number if ele % 2 == 0]
