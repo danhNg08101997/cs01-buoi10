@@ -19,4 +19,4 @@ def two_sum(lst, target):
 
 
 lst_number = [2, 7, 11, 15]
-print(two_sum(lst_number, 26))
+print(two_sum(lst_number, 9))
